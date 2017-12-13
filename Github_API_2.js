@@ -4,7 +4,9 @@ var github = new GitHubApi({
   debug: true
 })
 
+var manyDateArray = []
 var dateArray = []
+var countArray = []
 
 github.authenticate({
   type: 'oauth',
@@ -21,11 +23,17 @@ github.repos.getCommits({
     for (x=0; x<res.data.length; x++){
       var cutResult = res.data[x].commit.author.date.substring(0, 10);
       var retConvertDate = convertDate(cutResult)
-      dateArray.push(retConvertDate)
-      //console.log(retConvertDate)
+      manyDateArray.push(retConvertDate)
+      if (dateArray.indexOf(retConvertDate) <= (-1)){
+        dateArray.push(retConvertDate)
+      }
     }
-    for (y=0; y<dateArray.length; y++){
-      console.log(dateArray[y])
+    for(y=0; y<dateArray.length; y++){
+      var number = countInstances(manyDateArray, dateArray[y])
+      countArray.push(number)
+    }
+    for(t=0; t<countArray.length; t++){
+      console.log("Date: " + dateArray[t] + " Commits: " + countArray[t])
     }
 })
 
@@ -75,4 +83,14 @@ function convertDate(stringDate){
     var day = stringDate.substring(8,10)
     var convertedDate = day + "-" + month + "-" + year
     return convertedDate;
+}
+
+function countInstances(someArray, someString){
+    var count = 0
+    for (x=0; x<someArray.length; x++){
+      if (someArray[x] == someString){
+        count++;
+      }
+    }
+    return count
 }
