@@ -7,11 +7,17 @@ var github = new GitHubApi({
 var manyDateArray = []
 var dateArray = []
 var countArray = []
+var csvArray = []
+var headersArray = [2]
 
-github.authenticate({
+var fs = require('fs');
+var csv = require('fast-csv');
+var ws = fs.createWriteStream('my.csv');
+
+/*github.authenticate({
   type: 'oauth',
   token: 'X'
-})
+})*/
 
 github.repos.getCommits({
   owner: 'paul5hc',
@@ -32,9 +38,25 @@ github.repos.getCommits({
       var number = countInstances(manyDateArray, dateArray[y])
       countArray.push(number)
     }
+
+    headersArray[0] = "date"
+    headersArray.push("commits")
+
+
     for(t=0; t<countArray.length; t++){
-      console.log("Date: " + dateArray[t] + " Commits: " + countArray[t])
+      var subArray = [2]
+      subArray[0] = dateArray[t]
+      subArray.push(countArray[t])
+      csvArray.push(subArray)
     }
+    csvArray.push(headersArray)
+    csvArray.reverse()
+
+    csv.
+        write(
+           csvArray
+        ,  {header:true})
+        .pipe(ws);
 })
 
 function convertDate(stringDate){
@@ -81,7 +103,7 @@ function convertDate(stringDate){
 }
     var year = stringDate.substring(2,4)
     var day = stringDate.substring(8,10)
-    var convertedDate = day + "-" + month + "-" + year
+    var convertedDate = day + "." + month + "." + year
     return convertedDate;
 }
 
