@@ -30,15 +30,15 @@ var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
 var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv("my.csv", function(d, i, columns) {
+d3.csv("BarChartData.csv", function(d, i, columns) {
       for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-      d.commits = t;
+      d.Commits = t;
       return d;
     }, function(error, data) {
   if (error) throw error;
 
-  x.domain(data.map(function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.commits; })]);
+  x.domain(data.map(function(d) { return d.Date; }));
+  y.domain([0, d3.max(data, function(d) { return d.Commits; })]);
 
   g.append("g")
       .attr("class", "axis axis--x")
@@ -53,16 +53,16 @@ var g = svg.append("g")
       .attr("y", 6)
       .attr("dy", "0.71em")
       .attr("text-anchor", "end")
-      .text("commits");
+      .text("Commits");
 
   g.selectAll(".bar")
     .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return x(d.date); })
-      .attr("y", function(d) { return y(d.commits); })
+      .attr("x", function(d) { return x(d.Date); })
+      .attr("y", function(d) { return y(d.Commits); })
       .attr("width", x.bandwidth())
-      .attr("height", function(d) { return height - y(d.commits); });
+      .attr("height", function(d) { return height - y(d.Commits); });
 });
 
 </script>
