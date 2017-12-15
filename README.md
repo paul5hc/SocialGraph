@@ -14,12 +14,13 @@ Each of the folders in this repository contain:
 <b> BarChart_Tooltips </b>
 - Represenets data in the form of an advanced bar chart. Displays the size of each repository for a given 
    user in kb (paul5hc in this case).
-- Hovering over a bar on the chart changes its colour to orange and also displays its exact size value.   
+- Hovering over a bar on the chart changes its colour to orange and also displays its exact size value. (Sample_Photo2.PNG)
 
 <b> PieChart </b>
 - Represents data in the form of a pie chart. Displays the various programming languages and the scale of which these languages are 
    used in the user's github.
 
 <b> Additional Notes: </b>
+I did most of my programming in the node-github\examples directory of the Node-Github javascript library. From here, I ran my .js files using the "node <filename.js>" command in the command prompt.
 The .HTML files only appear to open correctly using the Microsoft Edge browser.
 Personal access tokens have also been removed from each of the .js files for the purpose of submission.
