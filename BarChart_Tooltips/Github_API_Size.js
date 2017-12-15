@@ -16,7 +16,7 @@ var ws = fs.createWriteStream('BarChart_Tooltips.csv');
 
 github.authenticate({
       type: 'oauth',
-      token: 'ea4499c77853f5c5abd2de86045810a54800d827'
+      token: 'X'
 })
 
 github.repos.getAll(
