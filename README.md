@@ -9,12 +9,12 @@ Each of the folders in this repository contain:
 <b> BarChart: </b>
 - Represents data in the form of a bar chart. Displays the number of commits made to the LowestCommonAncestor repository 
    on each day that a commit was made.
-- Hovering over a bar on the chart changes its colour to red (Sample_Photo2.PNG)
+- Hovering over a bar on the chart changes its colour to red (Sample_Photo2.PNG).
 
 <b> BarChart_Tooltips </b>
-- Represenets data in the form of an advanced bar chart. Displays the size of each repository for a given 
-   user in kb (paul5hc in this case).
-- Hovering over a bar on the chart changes its colour to orange and also displays its exact size value. (Sample_Photo2.PNG)
+- Represents data in the form of an advanced bar chart. Displays the size of each repository for a given 
+   user in kb.
+- Hovering over a bar on the chart changes its colour to orange and also displays its exact size value (Sample_Photo2.PNG).
 
 <b> PieChart </b>
 - Represents data in the form of a pie chart. Displays the various programming languages and the scale of which these languages are 
