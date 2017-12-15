@@ -6,17 +6,17 @@ Each of the folders in this repository contain:
 - The .HTML file which creates the graph based on the data in the .csv file.
 - Sample photos of the graphs created.
 
-** BarChart: **
+<b> BarChart: </b>
 -> Represents data in the form of a bar chart. Displays the number of commits made to the LowestCommonAncestor repository 
    on each day that a commit was made.
 -> Hovering over a bar on the chart changes its colour to red (Sample_Photo2.PNG)
 
-** BarChart_Tooltips **
+<b> BarChart_Tooltips </b>
 -> Represenets data in the form of an advanced bar chart. Displays the size of each repository for a given 
    user in kb (paul5hc in this case).
 -> Hovering over a bar on the chart changes its colour to orange and also displays its exact size value.   
 
-** PieChart **
+<b> PieChart </b>
 -> Represents data in the form of a pie chart. Displays the various programming languages and the scale of which these languages are 
    used in the user's github.
 
