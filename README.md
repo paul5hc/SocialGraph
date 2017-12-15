@@ -20,6 +20,6 @@ Each of the folders in this repository contain:
 -> Represents data in the form of a pie chart. Displays the various programming languages and the scale of which these languages are 
    used in the user's github.
 
-** Additional Notes: **
+<b> Additional Notes: </b>
 The .HTML files only appear to open correctly using the Microsoft Edge browser.
-Personal access tokens have been removed from each of the .js files for the purpose of submission.
+Personal access tokens have also been removed from each of the .js files for the purpose of submission.
